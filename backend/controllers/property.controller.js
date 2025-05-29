@@ -187,7 +187,7 @@ exports.getProperty = async (req, res) => {
     const { id } = req.params;
 
     if (!mongoose.Types.ObjectId.isValid(id)) {
-      return res.status(400).json({ message: "Invalid property ID format" });
+      return res.status(400).json({ message: "Invalid property ID format. Please use a valid MongoDB ObjectId." });
     }
 
     const property = await Property.findById(id);
@@ -208,7 +208,7 @@ exports.updateProperty = async (req, res) => {
     const { id } = req.params;
 
     if (!mongoose.Types.ObjectId.isValid(id)) {
-      return res.status(400).json({ message: "Invalid property ID format" });
+      return res.status(400).json({ message: "Invalid property ID format. Please use a valid MongoDB ObjectId." });
     }
 
     const property = await Property.findById(id);
@@ -239,7 +239,7 @@ exports.deleteProperty = async (req, res) => {
     const { id } = req.params;
 
     if (!mongoose.Types.ObjectId.isValid(id)) {
-      return res.status(400).json({ message: "Invalid property ID format" });
+      return res.status(400).json({ message: "Invalid property ID format. Please use a valid MongoDB ObjectId." });
     }
 
     const property = await Property.findById(id);
